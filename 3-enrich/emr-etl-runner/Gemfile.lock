@@ -20,7 +20,7 @@ GEM
     docile (1.1.5)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
-    elasticity (6.0.7)
+    elasticity (6.0.8)
       fog (~> 1.0)
       rest-client (~> 1.0)
       unf (~> 0.1)
@@ -128,7 +128,7 @@ DEPENDENCIES
   aws-sdk (~> 2)
   contracts (= 0.7)
   coveralls
-  elasticity (~> 6.0.7)
+  elasticity (~> 6.0.8)
   rspec (~> 2.14, >= 2.14.1)
   sluice (~> 0.2.3)
   snowplow-tracker (~> 0.5.2)

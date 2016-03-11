@@ -171,9 +171,11 @@ module Snowplow
 
         # Prepare a bootstrap action based on the AMI version
         bootstrap_jar_location = if @legacy
-          "s3://snowplow-hosted-assets/common/emr/snowplow-ami3-bootstrap-0.1.0.sh"
+          #"s3://snowplow-hosted-assets/common/emr/snowplow-ami3-bootstrap-0.1.0.sh"
+          "s3://cxar-ato-team/snowplow-hosted-assets/common/emr/snowplow-ami3-bootstrap-0.1.0.sh"
         else
-          "s3://snowplow-hosted-assets/common/emr/snowplow-ami4-bootstrap-0.1.0.sh"
+          "s3://cxar-ato-team/snowplow-hosted-assets/common/emr/snowplow-ami4-bootstrap.sh"
+          #"s3://snowplow-hosted-assets/common/emr/snowplow-ami4-bootstrap-0.1.0.sh"
         end
         @jobflow.add_bootstrap_action(Elasticity::BootstrapAction.new(bootstrap_jar_location))
 

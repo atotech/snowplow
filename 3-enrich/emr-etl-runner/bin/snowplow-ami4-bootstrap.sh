@@ -25,7 +25,7 @@ set -e
 # incompatible with 1.5, we download 1.5 to the classpath.
 # See https://forums.aws.amazon.com/thread.jspa?threadID=173258
 function fix_commons_codec() {
-    wget 'http://central.maven.org/maven2/commons-codec/commons-codec/1.5/commons-codec-1.5.jar'
+    wget 'http://central.maven.org/maven2/commons-codec/commons-codec/1.5/commons-codec-1.5.jar' -e use_proxy=yes -e http_proxy=http://pbcld-proxy.nordstrom.net:3128
     sudo mkdir -p /usr/lib/hadoop/lib
     sudo cp commons-codec-1.5.jar /usr/lib/hadoop/lib/remedial-commons-codec-1.5.jar
     rm commons-codec-1.5.jar
@@ -45,7 +45,7 @@ delete_scala_211
 fix_commons_codec
 
 # Remove commons-codec-1.4.jar if it appears
-while true; do
-    sleep 5;
-    sudo rm /usr/lib/hadoop/lib/commons-codec-1.4.jar && break || true;
-done &
+#while true; do
+    #sleep 5;
+    #sudo rm /usr/lib/hadoop/lib/commons-codec-1.4.jar && break || true;
+#done &

@@ -28,8 +28,8 @@ module Snowplow
 
       attr_reader :s3_objectpath, :table
 
-      @@snowplow_hosted_assets_root = "s3://snowplow-hosted-assets"
-      @@jsonpaths_path = "/4-storage/redshift-storage/jsonpaths/"
+      @@snowplow_hosted_assets_root = "s3://cxar-ato-team"
+      @@jsonpaths_path = "/snowplow-dev/jsonpaths/"
 
       @@jsonpaths_files = Hash.new # Our cache
 

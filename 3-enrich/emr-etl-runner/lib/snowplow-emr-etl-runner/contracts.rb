@@ -112,7 +112,9 @@ module Snowplow
             :core_instance_type => String,
             :task_instance_count => Num,
             :task_instance_type => String,
-            :task_instance_bid => Maybe[Num]
+            :task_instance_bid => Maybe[Num],
+            :master_security_group => Maybe[ArrayOf[String]],    # Elasticity allows the inclusion of optional specific security groups by ID. Federated VPC may require use of custom EMR security groups, e.g. ['sg-abcd1234']. This should fill the 'Security Groups for Master' slot in the EMR UI
+            :slave_security_group => Maybe[ArrayOf[String]]      # custom security group for Core & Task
             }),
           :additional_info => Maybe[String],
           :bootstrap_failure_tries => Num

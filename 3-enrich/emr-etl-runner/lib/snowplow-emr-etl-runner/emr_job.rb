@@ -148,6 +148,11 @@ module Snowplow
         @jobflow.master_instance_type = config[:aws][:emr][:jobflow][:master_instance_type]
         @jobflow.slave_instance_type  = config[:aws][:emr][:jobflow][:core_instance_type]
 
+        if config[:aws][:emr][:jobflow][:master_security_group] != nil      # Elasticity allows the inclusion of optional specific security groups by ID. Federated VPC may require use of custom EMR security groups, e.g. ['sg-abcd1234']. This should fill the 'Security Groups for Master' slot in the EMR UI. See contracts.rb #L116 and config.yml. 
+          @jobflow.additional_master_security_groups  = config[:aws][:emr][:jobflow][:master_security_group]
+          @jobflow.additional_slave_security_groups  = config[:aws][:emr][:jobflow][:slave_security_group]
+        end
+
         if config[:collectors][:format] == 'thrift'
           if @legacy
             [
@@ -171,9 +176,9 @@ module Snowplow
 
         # Prepare a bootstrap action based on the AMI version
         bootstrap_jar_location = if @legacy
-          "s3://snowplow-hosted-assets/common/emr/snowplow-ami3-bootstrap-0.1.0.sh"
+          "s3://cxar-ato-team/snowplow-hosted-assets/common/emr/snowplow-ami3-bootstrap-0.1.0.sh"
         else
-          "s3://snowplow-hosted-assets/common/emr/snowplow-ami4-bootstrap-0.1.0.sh"
+          "s3://cxar-ato-team/snowplow-hosted-assets/common/emr/snowplow-ami4-bootstrap-0.1.0.sh"
         end
         @jobflow.add_bootstrap_action(Elasticity::BootstrapAction.new(bootstrap_jar_location))
 

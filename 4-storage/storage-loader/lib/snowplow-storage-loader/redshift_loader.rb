@@ -15,6 +15,7 @@
 
 require 'sluice'
 require 'contracts'
+require 'aws-sdk'   # to use Aws::InstanceProfileCredentials
 
 # Ruby module to support the load of Snowplow events into Redshift
 module Snowplow
@@ -76,7 +77,7 @@ module Snowplow
           [build_copy_from_tsv_statement(config, config[:aws][:s3][:buckets][:enriched][:good], target[:table], target[:maxerror])]
         end + shredded_statements.map(&:copy)
 
-        credentials = [config[:aws][:access_key_id], config[:aws][:secret_access_key]]
+        credentials = [config[:aws][:access_key_id], config[:aws][:secret_access_key], config[:aws][:security_token]]     # again, guessing that this might factor into the s3 request somewhere...but probably not
 
         status = PostgresLoader.execute_transaction(target, copy_statements)
         unless status == []
@@ -248,7 +249,12 @@ module Snowplow
       # +config+:: the configuration options
       Contract Hash => String
       def get_credentials(config)
-        "aws_access_key_id=#{config[:aws][:access_key_id]};aws_secret_access_key=#{config[:aws][:secret_access_key]}"
+        if ( config[:aws][:access_key_id] == 'iam' && config[:aws][:secret_access_key] == 'iam' )   # this will definitely factor into the direct Redshift query requests, once we can get past the s3 session token issue(s)
+          credentials_from_role = Aws::InstanceProfileCredentials.new.credentials
+          "aws_access_key_id=#{credentials_from_role.access_key_id};aws_secret_access_key=#{credentials_from_role.secret_access_key};token=#{credentials_from_role.session_token}"
+        else
+          "aws_access_key_id=#{config[:aws][:access_key_id]};aws_secret_access_key=#{config[:aws][:secret_access_key]}"
+        end
       end
       module_function :get_credentials
 

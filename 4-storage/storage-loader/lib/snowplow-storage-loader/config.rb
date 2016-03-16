@@ -65,6 +65,7 @@ module Snowplow
           credentials_from_role = Aws::InstanceProfileCredentials.new.credentials
           config[:aws][:access_key_id] = credentials_from_role.access_key_id
           config[:aws][:secret_access_key] = credentials_from_role.secret_access_key
+          config[:aws][:security_token] = credentials_from_role.session_token   # totally guessing here that this will feed into redshift_loader.rb
         end
 
         # Add in our comprows setting

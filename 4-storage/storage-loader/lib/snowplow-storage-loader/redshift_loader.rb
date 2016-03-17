@@ -77,7 +77,7 @@ module Snowplow
           [build_copy_from_tsv_statement(config, config[:aws][:s3][:buckets][:enriched][:good], target[:table], target[:maxerror])]
         end + shredded_statements.map(&:copy)
 
-        credentials = [config[:aws][:access_key_id], config[:aws][:secret_access_key], config[:aws][:security_token]]     # again, guessing that this might factor into the s3 request somewhere...but probably not
+        credentials = [config[:aws][:access_key_id], config[:aws][:secret_access_key]]     # again, guessing that this might factor into the s3 request somewhere...but probably not
 
         status = PostgresLoader.execute_transaction(target, copy_statements)
         unless status == []

@@ -99,7 +99,7 @@ GEM
       contracts (~> 0.4)
       fog (= 1.24)
       net-ssh (= 2.9.2)
-    snowplow-tracker (0.5.2)
+    snowplow-tracker (0.5.3)
       contracts (~> 0.7, <= 0.11)
     term-ansicolor (1.3.2)
       tins (~> 1.0)
@@ -126,9 +126,12 @@ DEPENDENCIES
   coveralls
   elasticity (~> 6.0.7)
   rspec (~> 2.14, >= 2.14.1)
-  sluice (~> 0.2.3)
-  snowplow-tracker (~> 0.5.2)
+  sluice (= 0.2.3)
+  snowplow-tracker (= 0.5.3)
   warbler
 
+RUBY VERSION
+   ruby 1.9.3p551 (jruby 1.7.19)
+
 BUNDLED WITH
-   1.11.2
+   1.12.1

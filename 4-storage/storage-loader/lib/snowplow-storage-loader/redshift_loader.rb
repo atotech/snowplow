@@ -192,7 +192,6 @@ module Snowplow
           else
             ""
           end
-
         "COPY #{table} FROM '#{fixed_objectpath}' CREDENTIALS '#{credentials}' REGION AS '#{config[:aws][:s3][:region]}' DELIMITER '#{EVENT_FIELD_SEPARATOR}' MAXERROR #{maxerror} EMPTYASNULL FILLRECORD TRUNCATECOLUMNS #{comprows} TIMEFORMAT 'auto' ACCEPTINVCHARS #{compression_format};"
       end
       module_function :build_copy_from_tsv_statement
@@ -212,6 +211,7 @@ module Snowplow
       # +maxerror+:: how many errors to allow for this COPY
       Contract Hash, String, String, String, Num => String
       def build_copy_from_json_statement(config, s3_objectpath, jsonpaths_file, table, maxerror)
+        puts jsonpaths_file
         credentials = get_credentials(config)
         compression_format = get_compression_format(config[:enrich][:output_compression])
         fixed_objectpath = fix_s3_path(s3_objectpath)

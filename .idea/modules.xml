@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/2-collectors/clojure-collector/access-valve/src/main/main.iml" filepath="$PROJECT_DIR$/2-collectors/clojure-collector/access-valve/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-hadoop-bad-rows/src/main/main1.iml" filepath="$PROJECT_DIR$/3-enrich/scala-hadoop-bad-rows/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2-collectors/scala-stream-collector/src/main/scala/scala.iml" filepath="$PROJECT_DIR$/2-collectors/scala-stream-collector/src/main/scala/scala.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-common-enrich/src/test/scala/scala1.iml" filepath="$PROJECT_DIR$/3-enrich/scala-common-enrich/src/test/scala/scala1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-hadoop-shred/src/main/scala/scala10.iml" filepath="$PROJECT_DIR$/3-enrich/scala-hadoop-shred/src/main/scala/scala10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-hadoop-shred/src/test/scala/scala11.iml" filepath="$PROJECT_DIR$/3-enrich/scala-hadoop-shred/src/test/scala/scala11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-kinesis-enrich/src/main/scala/scala12.iml" filepath="$PROJECT_DIR$/3-enrich/scala-kinesis-enrich/src/main/scala/scala12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-kinesis-enrich/src/test/scala/scala13.iml" filepath="$PROJECT_DIR$/3-enrich/scala-kinesis-enrich/src/test/scala/scala13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2-collectors/scala-stream-collector/src/test/scala/scala14.iml" filepath="$PROJECT_DIR$/2-collectors/scala-stream-collector/src/test/scala/scala14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-hadoop-enrich/src/test/scala/scala2.iml" filepath="$PROJECT_DIR$/3-enrich/scala-hadoop-enrich/src/test/scala/scala2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4-storage/hadoop-elasticsearch-sink/src/test/scala/scala3.iml" filepath="$PROJECT_DIR$/4-storage/hadoop-elasticsearch-sink/src/test/scala/scala3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4-storage/kinesis-elasticsearch-sink/src/test/scala/scala4.iml" filepath="$PROJECT_DIR$/4-storage/kinesis-elasticsearch-sink/src/test/scala/scala4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4-storage/kinesis-elasticsearch-sink/src/main/scala/scala5.iml" filepath="$PROJECT_DIR$/4-storage/kinesis-elasticsearch-sink/src/main/scala/scala5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-hadoop-enrich/src/main/scala/scala6.iml" filepath="$PROJECT_DIR$/3-enrich/scala-hadoop-enrich/src/main/scala/scala6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4-storage/hadoop-elasticsearch-sink/src/main/scala/scala7.iml" filepath="$PROJECT_DIR$/4-storage/hadoop-elasticsearch-sink/src/main/scala/scala7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-common-enrich/src/main/scala/scala8.iml" filepath="$PROJECT_DIR$/3-enrich/scala-common-enrich/src/main/scala/scala8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2-collectors/thrift-schemas/snowplow-raw-event/src/test/scala/scala9.iml" filepath="$PROJECT_DIR$/2-collectors/thrift-schemas/snowplow-raw-event/src/test/scala/scala9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-enrich/scala-hadoop-bad-rows/src/test/test.iml" filepath="$PROJECT_DIR$/3-enrich/scala-hadoop-bad-rows/src/test/test.iml" />
+    </modules>
+  </component>
+</project>

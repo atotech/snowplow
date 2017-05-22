@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="snowplow-access-valve-all-0.2.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/2-collectors/clojure-collector/java-servlet/war-resources/.ebextensions/snowplow-access-valve-all-0.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
